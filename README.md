@@ -22,9 +22,9 @@ working with feature branches and a develop branch.
 ### Installation
 
 1. Clone the repository:
--
+
 - git clone https://github.com/your-username/your-repository.git
-- 
+  
 2. Open the project in NetBeans (or your preferred IDE).
 
 3. Build the project.
