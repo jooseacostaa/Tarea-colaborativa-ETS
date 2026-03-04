@@ -9,26 +9,38 @@ import java.util.ArrayList;
  */
 public class GestorTareas {
 
-    public ArrayList<Tarea> listaTareas;
+    private ArrayList<Tarea> listaTareas;
 
     /**
-     * Constructor para instanciar la lista de tareas
+     * Constructor que inicializa la lista de tareas.
      */
     public GestorTareas() {
-        this.listaTareas = new ArrayList<>();
+        listaTareas = new ArrayList<>();
     }
 
     /**
-     * Este método muestra la descripción y si esta completada de las tareas
-     * registradas
+     * Añade una nueva tarea a la lista.
+     *
+     * @param descripcion texto descriptivo de la tarea.
+     */
+    public void añadirTarea(String descripcion) {
+        Tarea nueva = new Tarea(descripcion);
+        listaTareas.add(nueva);
+        System.out.println("Tarea añadida correctamente.");
+    }
+
+    /**
+     * Muestra todas las tareas almacenadas en la lista. Si no hay tareas,
+     * informa al usuario.
      */
     public void mostrarTareas() {
         if (listaTareas.isEmpty()) {
-            System.out.println("No hay tareas registradas");
+            System.out.println("No hay tareas registradas.");
         } else {
-            for (Tarea x : listaTareas) {
-                System.out.println("Descripción: " + x.getDescripcion());
-                System.out.println("Completada? " + x.isCompletada());
+            for (int i = 0; i < listaTareas.size(); i++) {
+                Tarea t = listaTareas.get(i);
+                System.out.println((i + 1) + ". " + t.getDescripcion()
+                        + " - " + (t.isCompletada() ? "Completada" : "Pendiente"));
             }
         }
 
