@@ -9,5 +9,5 @@ public class GestorTareas {
     public GestorTareas(ArrayList<Tarea> listaTareas) {
         this.listaTareas = listaTareas;
     }
-
+    
 }
